@@ -39,7 +39,7 @@ if(option == 1){
     if(blance >= withdraw){
         blance = blance - withdraw;
     }else{
-        cout<<"You not have enough money";
+        cout<<"You not have enough money"<<endl;
     }
 }
 }
