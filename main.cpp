@@ -1,48 +1,50 @@
 #include<iostream>
 using namespace std;
-void showmanue(){
-    cout<<"********Manue********"<<endl;
-    cout<<"1.Check blance"<<endl;
+
+void display(){
+    cout<<"***********Manue***********"<<endl;
+    cout<<"1.Blance"<<endl;
     cout<<"2.Deposit"<<endl;
     cout<<"3.Withdraw"<<endl;
     cout<<"4.Exit"<<endl;
-    cout<<"*********************"<<endl;
-
+    cout<<"***************************"<<endl;
 }
+
 int main(){
+
+display();
 
 int option;
 double blance=1000;
 
-while(option!=4){
-
-    showmanue();
+while(option != 4){
 
 cout<<"Option: ";
 cin>>option;
 
-    if(option==1){
-    cout<<"Blance is :"<<blance<<"$"<<endl; 
-    }else if (option==2)
-    {
-    cout<<"Deposit Amount :";
+if(option == 1){
+    cout<<"Your blance is :"<<blance<<"$"<<endl;
+}else if (option == 2)
+{
     double deposit;
+    cout<<"Deposit amount :";
     cin>>deposit;
-    blance+=deposit; 
-    }else if (option==3)
-    {
-    cout<<"Withdraw Amount :";
-        double withdeaw;
-        cin>>withdeaw;
-        
-        if(withdeaw<=blance){
-            blance-=withdeaw;
-        }else{
-            cout<<"Not enough money"<<endl;
-        }
-        
-    } 
-    
+    blance= blance + deposit; 
+}else if (option == 3)
+{
+    double withdraw;
+    cout<<"Withdraw amount :";
+    cin>>withdraw;
+
+    if(blance >= withdraw){
+        blance = blance - withdraw;
+    }else{
+        cout<<"You not have enough money";
+    }
 }
+}
+
+cout<<"Thanks for banking with us";
+
 return 0;
 }
